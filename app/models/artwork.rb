@@ -4,4 +4,10 @@ class Artwork < ApplicationRecord
         scope: :artist_id,
         message: "artist cannot have two artworks with same title"
     }
+
+    belongs_to(
+        :artist,
+        class_name: 'User',
+        foreign_key: :artist_id
+    )
 end
