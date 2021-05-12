@@ -8,7 +8,7 @@ class ArtworksController < ApplicationController
     def create
         artwork = Artwork.new(artwork_params)
 
-        if Artwork.save
+        if artwork.save
             render json: artwork
         else
             render json: artwork.errors.full_messages, status: :unprocessable_entity
