@@ -26,6 +26,13 @@ class Artwork < ApplicationRecord
         source: :viewer
     )
 
+    has_many(
+        :comments,
+        class_name: 'Comment',
+        foreign_key: :artwork_id,
+        primary_key: :id
+    )
+
     def self.artworks_for_user(user_id)
         Artwork
         .left_outer_joins(:artwork_shares)
