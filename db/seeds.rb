@@ -23,8 +23,16 @@ mushroom = Artwork.create(title: "mushroom", image_url: "fourth_url", artist_id:
 ladybird = Artwork.create(title: "ladybird", image_url: "fifth_url", artist_id: reson.id)
 
 ArtworkShare.create(artwork_id: phallus.id, viewer_id: ramsey.id)
+ArtworkShare.create(artwork_id: mushroom.id, viewer_id: ramsey.id)
 ArtworkShare.create(artwork_id: hotdog.id, viewer_id: meteur.id)
 ArtworkShare.create(artwork_id: mushroom.id, viewer_id: mwangi.id)
 ArtworkShare.create(artwork_id: ladybird.id, viewer_id: sophie.id)
+
+Comment.create(artwork_id: phallus.id, commenter_id: ramsey.id, body: "This is basically a penis")
+Comment.create(artwork_id: hotdog.id, commenter_id: meteur.id, body: "This is a hotdog")
+Comment.create(artwork_id: mushroom.id, commenter_id: ramsey.id, body: "This is a trippy mushroom")
+Comment.create(artwork_id: mushroom.id, commenter_id: mwangi.id, body: "Yeah, I'm getting high just looking at it")
+
+
 
 
