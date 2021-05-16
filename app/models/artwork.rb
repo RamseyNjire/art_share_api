@@ -30,7 +30,8 @@ class Artwork < ApplicationRecord
         :comments,
         class_name: 'Comment',
         foreign_key: :artwork_id,
-        primary_key: :id
+        primary_key: :id,
+        dependent: :destroy
     )
 
     def self.artworks_for_user(user_id)
