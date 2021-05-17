@@ -14,4 +14,6 @@ class Comment < ApplicationRecord
         foreign_key: :commenter_id,
         primary_key: :id
     )
+
+    has_many :likes, as: :likeable, dependent: :destroy
 end

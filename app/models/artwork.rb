@@ -34,6 +34,8 @@ class Artwork < ApplicationRecord
         dependent: :destroy
     )
 
+    has_many :likes, as: :likeable, dependent: :destroy
+
     def self.artworks_for_user(user_id)
         Artwork
         .left_outer_joins(:artwork_shares)
