@@ -28,11 +28,15 @@ ArtworkShare.create(artwork_id: hotdog.id, viewer_id: meteur.id)
 ArtworkShare.create(artwork_id: mushroom.id, viewer_id: mwangi.id)
 ArtworkShare.create(artwork_id: ladybird.id, viewer_id: sophie.id)
 
-Comment.create(artwork_id: phallus.id, commenter_id: ramsey.id, body: "This is basically a penis")
-Comment.create(artwork_id: hotdog.id, commenter_id: meteur.id, body: "This is a hotdog")
-Comment.create(artwork_id: mushroom.id, commenter_id: ramsey.id, body: "This is a trippy mushroom")
-Comment.create(artwork_id: mushroom.id, commenter_id: mwangi.id, body: "Yeah, I'm getting high just looking at it")
+first_comment = Comment.create(artwork_id: phallus.id, commenter_id: ramsey.id, body: "This is basically a penis")
+second_comment = Comment.create(artwork_id: hotdog.id, commenter_id: meteur.id, body: "This is a hotdog")
+third_comment = Comment.create(artwork_id: mushroom.id, commenter_id: ramsey.id, body: "This is a trippy mushroom")
+fourth_comment = Comment.create(artwork_id: mushroom.id, commenter_id: mwangi.id, body: "Yeah, I'm getting high just looking at it")
 
-
+Like.create(user_id: ramsey.id, likeable: phallus)
+Like.create(user_id: gideon.id, likeable: phallus)
+Like.create(user_id: reson.id, likeable: mushroom)
+Like.create(user_id: brian.id, likeable: first_comment)
+Like.create(user_id: reson.id, likeable: first_comment)
 
 

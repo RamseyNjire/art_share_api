@@ -37,4 +37,12 @@ class User < ApplicationRecord
         primary_key: :id,
         dependent: :destroy
     )
+
+    def liked_artworks
+
+    end
+
+    def liked_comments
+        likes.where(likeable_type: :comment)
+    end
 end

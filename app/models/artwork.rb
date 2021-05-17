@@ -36,6 +36,12 @@ class Artwork < ApplicationRecord
 
     has_many :likes, as: :likeable, dependent: :destroy
 
+    has_many(
+        :likers,
+        through: :likes,
+        source: :user
+    )
+
     def self.artworks_for_user(user_id)
         Artwork
         .left_outer_joins(:artwork_shares)
