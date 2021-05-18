@@ -38,11 +38,17 @@ class User < ApplicationRecord
         dependent: :destroy
     )
 
-    def liked_artworks
+    has_many(
+        :liked_artworks,
+        through: :likes,
+        source: :likeable,
+        source_type: 'Artwork'
+    )
 
-    end
-
-    def liked_comments
-        likes.where(likeable_type: :comment)
-    end
+    has_many(
+        :liked_comments,
+        through: :likes,
+        source: :likeable,
+        source_type: 'Comment'
+    )
 end
