@@ -16,6 +16,7 @@ class Artwork < ApplicationRecord
         scope: :artist_id,
         message: "cannot be same for two artworks by same artist"
     }
+    validates :favorite, inclusion: { in: [true, false] }
 
     belongs_to(
         :artist,

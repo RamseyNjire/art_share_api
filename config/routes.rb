@@ -72,6 +72,12 @@ Rails.application.routes.draw do
     end
   end
   resources :artwork_shares, only: [:create, :destroy]
+  resources :artworks_shares do
+    member do
+      post :favorite, to: 'artwork_shares#favorite', as: 'favorite'
+      post :unfavorite, to: 'artwork_shares#unfavorite', as: 'unfavorite'
+    end
+  end
   resources :comments, only: [:create, :destroy]
   resources :comments do
     member do

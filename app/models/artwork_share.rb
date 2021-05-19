@@ -13,6 +13,7 @@ class ArtworkShare < ApplicationRecord
         scope: :viewer_id,
         message: "cannot be shared twice with same user"
     }
+    validates :favorite, inclusion: { in: [true, false] }
 
     belongs_to(
         :artwork,
