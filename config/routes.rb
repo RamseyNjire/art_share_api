@@ -23,6 +23,10 @@
 #                           PUT    /artworks/:id(.:format)                                                                  artworks#update
 #                           DELETE /artworks/:id(.:format)                                                                  artworks#destroy
 #          artwork_comments GET    /artworks/:artwork_id/comments(.:format)                                                 comments#index
+#              like_artwork POST   /artworks/:id/like(.:format)                                                             artworks#like
+#            unlike_artwork POST   /artworks/:id/unlike(.:format)                                                           artworks#unlike
+#          favorite_artwork POST   /artworks/:id/favorite(.:format)                                                         artworks#favorite
+#        unfavorite_artwork POST   /artworks/:id/unfavorite(.:format)                                                       artworks#unfavorite
 #                           GET    /artworks(.:format)                                                                      artworks#index
 #                           POST   /artworks(.:format)                                                                      artworks#create
 #               new_artwork GET    /artworks/new(.:format)                                                                  artworks#new
@@ -35,6 +39,16 @@
 #             artwork_share DELETE /artwork_shares/:id(.:format)                                                            artwork_shares#destroy
 #                  comments POST   /comments(.:format)                                                                      comments#create
 #                   comment DELETE /comments/:id(.:format)                                                                  comments#destroy
+#              like_comment POST   /comments/:id/like(.:format)                                                             comments#like
+#            unlike_comment POST   /comments/:id/unlike(.:format)                                                           comments#unlike
+#                           GET    /comments(.:format)                                                                      comments#index
+#                           POST   /comments(.:format)                                                                      comments#create
+#               new_comment GET    /comments/new(.:format)                                                                  comments#new
+#              edit_comment GET    /comments/:id/edit(.:format)                                                             comments#edit
+#                           GET    /comments/:id(.:format)                                                                  comments#show
+#                           PATCH  /comments/:id(.:format)                                                                  comments#update
+#                           PUT    /comments/:id(.:format)                                                                  comments#update
+#                           DELETE /comments/:id(.:format)                                                                  comments#destroy
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
