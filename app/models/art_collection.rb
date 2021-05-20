@@ -35,4 +35,8 @@ class ArtCollection < ApplicationRecord
         through: :collections,
         source: :artwork
     )
+
+    def self.art_collections_for_artwork(artwork_id)
+        ArtCollection.joins
+    end
 end

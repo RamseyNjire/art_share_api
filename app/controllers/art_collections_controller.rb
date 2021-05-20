@@ -25,7 +25,7 @@ class ArtCollectionsController < ApplicationController
         if art_collection.update_attributes(art_collection_params)
             render json: art_collection
         else
-            render json: art_collection.errors.full_messages, status: unprocessable_entity
+            render json: art_collection.errors.full_messages, status: :unprocessable_entity
         end
     end
 
@@ -35,6 +35,12 @@ class ArtCollectionsController < ApplicationController
         art_collection.destroy
 
         render json: art_collection
+    end
+
+    def artworks
+        art_collection = ArtCollection.find(params[:id])
+
+        render json: art_collection.artworks
     end
 
     def art_collection_params

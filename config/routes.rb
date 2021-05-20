@@ -28,6 +28,7 @@
 #            unlike_artwork POST   /artworks/:id/unlike(.:format)                                                           artworks#unlike
 #          favorite_artwork POST   /artworks/:id/favorite(.:format)                                                         artworks#favorite
 #        unfavorite_artwork POST   /artworks/:id/unfavorite(.:format)                                                       artworks#unfavorite
+#   art_collections_artwork GET    /artworks/:id/art_collections(.:format)                                                  artworks#art_collections
 #                           GET    /artworks(.:format)                                                                      artworks#index
 #                           POST   /artworks(.:format)                                                                      artworks#create
 #               new_artwork GET    /artworks/new(.:format)                                                                  artworks#new
@@ -65,6 +66,17 @@
 #                           PATCH  /art_collections/:id(.:format)                                                           art_collections#update
 #                           PUT    /art_collections/:id(.:format)                                                           art_collections#update
 #                           DELETE /art_collections/:id(.:format)                                                           art_collections#destroy
+#   artworks_art_collection GET    /art_collections/:id/artworks(.:format)                                                  art_collections#artworks
+#                           GET    /art_collections(.:format)                                                               art_collections#index
+#                           POST   /art_collections(.:format)                                                               art_collections#create
+#        new_art_collection GET    /art_collections/new(.:format)                                                           art_collections#new
+#       edit_art_collection GET    /art_collections/:id/edit(.:format)                                                      art_collections#edit
+#                           GET    /art_collections/:id(.:format)                                                           art_collections#show
+#                           PATCH  /art_collections/:id(.:format)                                                           art_collections#update
+#                           PUT    /art_collections/:id(.:format)                                                           art_collections#update
+#                           DELETE /art_collections/:id(.:format)                                                           art_collections#destroy
+#               collections POST   /collections(.:format)                                                                   collections#create
+#                collection DELETE /collections/:id(.:format)                                                               collections#destroy
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -89,6 +101,7 @@ Rails.application.routes.draw do
       post :unlike, to: 'artworks#unlike', as: 'unlike'
       post :favorite, to: 'artworks#favorite', as: 'favorite'
       post :unfavorite, to: 'artworks#unfavorite', as: 'unfavorite'
+      get :art_collections, to: 'artworks#art_collections', as: 'art_collections'
     end
   end
   
@@ -111,4 +124,11 @@ Rails.application.routes.draw do
   end
   
   resources :art_collections, only: [:create, :show, :update, :destroy]
+  resources :art_collections do
+    member do
+      get :artworks, to: 'art_collections#artworks', as: 'artworks'
+    end
+  end
+
+  resources :collections, only: [:create, :destroy]
 end

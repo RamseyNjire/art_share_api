@@ -65,6 +65,7 @@ class User < ApplicationRecord
         :art_collections,
         class_name: "ArtCollection",
         foreign_key: :collector_id,
-        primary_key: :id
+        primary_key: :id,
+        dependent: :destroy
     )
 end
