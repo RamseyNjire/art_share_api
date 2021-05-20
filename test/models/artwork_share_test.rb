@@ -7,6 +7,7 @@
 #  viewer_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  favorite   :boolean          default(FALSE)
 #
 require 'test_helper'
 

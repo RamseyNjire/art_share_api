@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: art_collections
+#
+#  id           :bigint           not null, primary key
+#  name         :string           not null
+#  description  :text
+#  collector_id :integer          not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 class ArtCollection < ApplicationRecord
     validates :name, presence: true
     validates :name, uniqueness: {
