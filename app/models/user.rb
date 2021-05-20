@@ -60,4 +60,11 @@ class User < ApplicationRecord
         source: :likeable,
         source_type: 'Comment'
     )
+
+    has_many(
+        :art_collections,
+        class_name: "ArtCollection",
+        foreign_key: :collector_id,
+        primary_key: :id
+    )
 end

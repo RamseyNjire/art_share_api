@@ -55,6 +55,19 @@ class Artwork < ApplicationRecord
         source: :user
     )
 
+    has_many(
+        :collections,
+        class_name: "Collection",
+        foreign_key: :artwork_id,
+        primary_key: :id
+    )
+
+    has_many(
+        :art_collections,
+        through: :collections,
+        source: :art_collection_id
+    )
+
     def self.artworks_for_user(user_id)
         Artwork
         .left_outer_joins(:artwork_shares)
