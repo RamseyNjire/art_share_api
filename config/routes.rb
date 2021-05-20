@@ -62,6 +62,8 @@
 #                           DELETE /comments/:id(.:format)                                                                  comments#destroy
 #           art_collections POST   /art_collections(.:format)                                                               art_collections#create
 #            art_collection GET    /art_collections/:id(.:format)                                                           art_collections#show
+#                           PATCH  /art_collections/:id(.:format)                                                           art_collections#update
+#                           PUT    /art_collections/:id(.:format)                                                           art_collections#update
 #                           DELETE /art_collections/:id(.:format)                                                           art_collections#destroy
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
