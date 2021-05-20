@@ -21,7 +21,7 @@ class ArtCollection < ApplicationRecord
 
     has_many(
         :artworks,
-        through: :collection,
-        source: :artwork_id
+        through: :collections,
+        source: :artwork
     )
 end

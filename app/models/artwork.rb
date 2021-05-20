@@ -65,7 +65,7 @@ class Artwork < ApplicationRecord
     has_many(
         :art_collections,
         through: :collections,
-        source: :art_collection_id
+        source: :art_collection
     )
 
     def self.artworks_for_user(user_id)
