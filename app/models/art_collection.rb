@@ -1,6 +1,6 @@
 class ArtCollection < ApplicationRecord
     validates :name, presence: true
-    vaidates :name, uniqueness: {
+    validates :name, uniqueness: {
         scope: :collector_id,
         message: "cannot be shared by two collections from same user"
     }
@@ -9,6 +9,13 @@ class ArtCollection < ApplicationRecord
         :collector,
         class_name: "User",
         foreign_key: :collector_id,
+        primary_key: :id
+    )
+
+    has_many(
+        :collections,
+        class_name: "Collection",
+        foreign_key: :art_collection_id,
         primary_key: :id
     )
 
