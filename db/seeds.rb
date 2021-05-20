@@ -39,4 +39,9 @@ Like.create(user_id: reson.id, likeable: mushroom)
 Like.create(user_id: brian.id, likeable: first_comment)
 Like.create(user_id: reson.id, likeable: first_comment)
 
+ramsey_collection = ArtCollection.create(name: "First Collection", description: "A collection of the beautiful and rare", collector_id: ramsey.id)
+
+Collection.create(artwork_id: phallus.id, art_collection_id: ramsey_collection.id)
+Collection.create(artwork_id: devil_horn.id, art_collection_id: ramsey_collection.id)
+Collection.create(artwork_id: mushroom.id, art_collection_id: ramsey_collection.id)
 
