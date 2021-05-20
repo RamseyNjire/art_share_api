@@ -108,5 +108,5 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :art_collections, only: [:create, :show, :destroy]
+  resources :art_collections, only: [:create, :show, :update, :destroy]
 end
