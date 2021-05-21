@@ -15,9 +15,9 @@ In this project, I
 
 ## Built With
 
-- Ruby
-- Ruby on Rails
-- Postman
+- Ruby 2.5.0
+- Ruby on Rails 5.2.6
+- Postman 7.33.0
 
 ## Getting Started
 - Clone the project to your local machine;
